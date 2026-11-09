@@ -1,0 +1,55 @@
+/* @import "tailwindcss";
+
+@theme {
+  --color-app: #121212;
+  --color-card: #1e1e1e;
+  --color-brand: #8b5cf6;
+  --color-soft: #a1a1aa;
+}
+
+body { background: #121212; color: #f5f5f5; } */
+
+@import "tailwindcss";
+
+/* Permet d'écrire light:text-… pour ajuster une couleur en thème clair */
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+:root {
+  color-scheme: dark;
+  --app: #121212;
+  --card: #1e1e1e;
+  --soft: #a1a1aa;
+  --ink: #f5f5f5;
+  --line: rgb(255 255 255 / 0.1);
+  --tint: rgb(255 255 255 / 0.1);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --app: #f4f4f5;
+  --card: #ffffff;
+  --soft: #52525b;
+  --ink: #18181b;
+  --line: rgb(0 0 0 / 0.1);
+  --tint: rgb(0 0 0 / 0.06);
+}
+
+@theme inline {
+  --color-app: var(--app);
+  --color-card: var(--card);
+  --color-soft: var(--soft);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+  --color-tint: var(--tint);
+  --color-brand: #8b5cf6;
+}
+
+body {
+  background: var(--app);
+  color: var(--ink);
+}
+
+/* Texte toujours blanc sur les boutons violets, quel que soit le thème */
+.bg-brand {
+  color: #fff;
+}
