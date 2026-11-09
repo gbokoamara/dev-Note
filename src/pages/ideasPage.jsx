@@ -4,9 +4,8 @@ import { Plus, Pencil, Trash2, FolderPlus, Lightbulb } from "lucide-react"
 import { useIdeas } from "../hooks/useIdeas"
 import { Modal } from "../components/Modal"
 import { IdeaForm } from "../components/IdeaForm"
-// import { ConvertForm } from "../components/ConvertForm"
+import { ConvertForm } from "../components/ConvertForm"
 import { IDEA_STATUS, formatDate } from "../utils/labels"
-import { ConvertForm } from "../components/convertForm"
 
 const TABS = [
   { value: "", label: "Toutes" },
